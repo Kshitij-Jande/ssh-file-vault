@@ -1,0 +1,8 @@
+{
+    "remote_vault_folder_path": "/home/ubuntu/Desktop/something/",
+    "private_key_path": "",
+    "private_key_passphrase": "",
+    "host_ip": "",
+    "host_port": 22,
+    "host_user": "ubuntu"
+}
