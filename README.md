@@ -35,27 +35,27 @@ __The flow of this program is quite straightforward.__
 
 - You configure details, such as your private key, host information, etc.
 - When you wish to upload a file to the server:
-    1. File encryption:
+    1. **File encryption**:
         1. A new Fernet key is generated, if one doesn't exist.
         2. This key is stored as `secret.key` under the `secret` folder.
         3. The file is encrypted using Fernet and the secret key from last step.
         4. This encrypted file is given a unique name and temporarily stored in `temp` folder.
-    2. File upload:
+    2. **File upload**:
         1. The encrypted file is accessed from the `temp` folder.
         2. An SSH connection is established with the server, using your private key.
         3. The file is transfered to the remote directory using SFTP.
         4. Once the transfer is completed, the temporary file is deleted from the `temp` folder.
-    3. File tracking:
+    3. **File tracking**:
         1. Each file has details such as its original file name, upload timestamp, encrypted file name and its hash
         2. This information is used to download a file or get its information.
         3. All information is stored in `storage.json` under the `config` folder.
 - When you wish to download a file from the server:
-    1. File download:
+    1. **File download**:
         1. An SSH connection is established with the server, using your private key.
         2. Using SFTP, the program checks whether or not the file was actually uploaded to the server.
         3. The encrypted file is downloaded from the remote folder.
         4. This file is temporarily stored in the `temp` folder.
-    2. File decryption:
+    2. **File decryption**:
         1. From `temp` folder, the encrypted file is accessed.
         2. A hash (SHA256) comparison is done to check the integrity of the file.
         3. If the hashes do not match, the user is notified.
