@@ -23,7 +23,7 @@ pip install -r requirements.txt
     - `private_key_path`: Path to your private key, which you use for SSH connection to your server.
     - `private_key_passphrase`: Your private key's passphrase. Leave this blank if you haven't set one.
     - `host_ip`: The IP address of your remote server.
-    - `host_port`: The SSH port number of your remote server. Default value is 22.
+    - `host_port`: The SSH port number of your remote server. Default value is `22`.
     - `host_user`: The user to log into.
 5. You can also configure through commands, like this:
     - `py main.py sethost 127.0.0.1`
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 
 ## How it works
-__The flow of this program is quite straightforward.__
+_The flow of this program is quite straightforward._
 
 - You configure details, such as your private key, host information, etc.
 - When you wish to upload a file to the server:
