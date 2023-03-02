@@ -38,7 +38,7 @@ _The flow of this program is quite straightforward._
     1. **File encryption**:
         1. A new Fernet key is generated, if one doesn't exist.
         2. This key is stored as `secret.key` under the `secret` folder.
-        3. The file is encrypted using Fernet and the secret key from last step.
+        3. The file is encrypted using Fernet (AES in CBC mode) and the secret key from last step.
         4. This encrypted file is given a unique name and temporarily stored in `temp` folder.
     2. **File upload**:
         1. The encrypted file is accessed from the `temp` folder.
